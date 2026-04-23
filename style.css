@@ -1748,108 +1748,105 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); line-height: 1.15; font-weig
   flex: 1;
 }
 
-/* ===== PROBAR DEMO SANDBOX ===== */
+/* ===== CTA BANNER SANDBOX ===== */
 .sandbox-demo {
   padding: 80px 0;
   position: relative;
-  background: rgba(19,45,70,0.2);
+  background: rgba(19,45,70,0.15);
   border-top: 1px solid var(--border-dim);
   border-bottom: 1px solid var(--border-dim);
   overflow: hidden;
 }
-.sandbox-container {
-  max-width: 900px;
+
+.sandbox-cta-banner {
+  max-width: 1100px;
   margin: 0 auto;
-  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
 }
-.sandbox-title {
+
+.sandbox-cta-text {
+  padding: 60px 50px;
+  text-align: left;
+}
+
+.sandbox-cta-title {
   font-family: var(--font-head);
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 16px;
+  line-height: 1.2;
 }
-.sandbox-subtitle {
+
+.sandbox-cta-desc {
   color: var(--text-muted);
-  margin-bottom: 40px;
   font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
 }
 
-.sandbox-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-.sandbox-step {
-  display: flex;
+.btn-demo-launch {
+  display: inline-flex;
   align-items: center;
-  background: var(--bg-deep);
-  border: 1px solid var(--border-dim);
+  gap: 10px;
+  font-size: 1.05rem;
+  padding: 14px 32px;
   border-radius: var(--radius-md);
-  padding: 6px 6px 6px 16px;
-  gap: 12px;
-}
-.sandbox-step .step-num {
-  font-family: var(--font-head);
-  color: var(--accent);
+  text-decoration: none;
   font-weight: 700;
-}
-.sandbox-select {
-  background: transparent;
-  color: var(--white);
-  border: none;
-  outline: none;
-  padding: 8px 12px;
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-.sandbox-select option {
-  background: var(--bg-deep);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(1, 195, 141, 0.3);
 }
 
-.btn-demo-sim {
-  padding: 11px 24px;
-  font-size: 0.9rem;
-  cursor: not-allowed;
-  opacity: 0.8;
+.btn-demo-launch:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(1, 195, 141, 0.4);
 }
 
-.sandbox-preview {
+.sandbox-cta-visual {
   position: relative;
+  height: 100%;
+  min-height: 380px;
   background: var(--bg-deep);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-dim);
-  height: 350px;
+  border-left: 1px solid var(--border-dim);
   overflow: hidden;
-}
-.preview-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(13,17,23,0.8);
-  backdrop-filter: blur(5px);
-  z-index: 2;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
-  text-align: center;
-  border: 1px dashed var(--accent);
-  margin: 20px;
-  border-radius: var(--radius-md);
 }
-.preview-overlay span {
-  font-weight: 700;
-  color: var(--accent);
-  font-size: 1.2rem;
-  margin-bottom: 12px;
+
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(1,195,141,0.2), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: pulse-dot 4s ease-in-out infinite alternate;
 }
-.preview-overlay p {
-  color: var(--text-muted);
-  max-width: 400px;
-  font-size: 0.9rem;
+
+.mock-cta {
+  width: 120%;
+  height: 120%;
+  transform: rotate(-4deg) scale(0.9) translateX(20px);
+  box-shadow: -10px 10px 40px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  transition: transform 0.5s ease;
+}
+
+.sandbox-cta-banner:hover .mock-cta {
+  transform: rotate(-2deg) scale(0.95) translateX(10px);
 }
 
 .mock-dash {
@@ -1895,6 +1892,9 @@ h1, h2, h3, h4, h5 { font-family: var(--font-head); line-height: 1.15; font-weig
   .contact-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 48px; }
   .footer-links { grid-template-columns: repeat(3, 1fr); }
+  .sandbox-cta-banner { grid-template-columns: 1fr; }
+  .sandbox-cta-visual { min-height: 250px; border-left: none; border-top: 1px solid var(--border-dim); }
+  .sandbox-cta-text { padding: 40px 30px; text-align: center; }
 }
 
 /* Responsive for new sections */
